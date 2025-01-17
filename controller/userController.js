@@ -8,9 +8,9 @@ import jwt from "jsonwebtoken";
 //@access  public
 export const getUser = asynchandler(async (req, res) => {
  
-  const { username, email, phonebook, password } = req.body;
+  const { firstname,lastname, email, phonebook, password } = req.body;
 
-  if ((!username, !email, !password, !phonebook)) {
+  if ((!firstname, !lastname, !email, !password, !phonebook)) {
     res.status(400);
     throw new Error("All fields are mandatory");
   }
@@ -32,7 +32,8 @@ export const getUser = asynchandler(async (req, res) => {
   var hash = bcrypt.hashSync(password, salt);
   console.log("Your Hash password is this", hash);
   const user = await User.create({
-    username,
+    firstname,
+    lastname,
     email,
     phonebook,
     password: hash,

@@ -2,7 +2,11 @@ import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema(
   {
-    username: {
+   firstname: {
+      type: String,
+      required: [false, "Please add the user name"],
+    },
+    lastname: {
       type: String,
       required: [false, "Please add the user name"],
     },
@@ -19,7 +23,6 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [false, "Please add the user password"],
     },
-   
   },
   {
     timestamps: true,
