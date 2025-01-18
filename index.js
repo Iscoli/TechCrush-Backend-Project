@@ -13,6 +13,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://capstone-proj-jet.vercel.app",
+  "https://techcrush-backend-project.onrender.com",
 ];
 
 const corsOptions = {
